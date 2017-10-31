@@ -10,6 +10,6 @@ mkdir -p "${TOOLS_DIR}"
 mkdir -p "${BUILD_DIR}/qemu-build"
 cd "${BUILD_DIR}/qemu-build"
 "${SRC_DIR}/${QEMU_VERSION}/configure" --target-list=arm-softmmu,aarch64-softmmu --prefix="${TOOLS_DIR}"
-make
-make install
+make "$@"
+make "$@" install
 cd "${OUTPUT_DIR}"
